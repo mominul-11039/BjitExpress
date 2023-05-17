@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89B23FA92A1487F800AD7BB0 /* CloudKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B23FA72A1487F800AD7BB0 /* CloudKitViewModel.swift */; };
+		89B23FAA2A1487F800AD7BB0 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B23FA82A1487F800AD7BB0 /* CoreDataViewModel.swift */; };
+		89B23FAD2A14886200AD7BB0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B23FAC2A14886200AD7BB0 /* Constant.swift */; };
 		89C843862A120047005AABDF /* BjitExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C843852A120047005AABDF /* BjitExpressApp.swift */; };
 		89C843882A120047005AABDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C843872A120047005AABDF /* ContentView.swift */; };
 		89C8438A2A120048005AABDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C843892A120048005AABDF /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89B23FA72A1487F800AD7BB0 /* CloudKitViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitViewModel.swift; sourceTree = "<group>"; };
+		89B23FA82A1487F800AD7BB0 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
+		89B23FAC2A14886200AD7BB0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		89C843822A120047005AABDF /* BjitExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BjitExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C843852A120047005AABDF /* BjitExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BjitExpressApp.swift; sourceTree = "<group>"; };
 		89C843872A120047005AABDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89B23FA42A14879900AD7BB0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				89B23FA72A1487F800AD7BB0 /* CloudKitViewModel.swift */,
+				89B23FA82A1487F800AD7BB0 /* CoreDataViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		89B23FAB2A14884D00AD7BB0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				89B23FAC2A14886200AD7BB0 /* Constant.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		89C843792A120047005AABDF = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +122,8 @@
 		89C843842A120047005AABDF /* BjitExpress */ = {
 			isa = PBXGroup;
 			children = (
+				89B23FAB2A14884D00AD7BB0 /* Utils */,
+				89B23FA42A14879900AD7BB0 /* ViewModels */,
 				89C843B42A1200E8005AABDF /* BjitExpress.entitlements */,
 				89C843852A120047005AABDF /* BjitExpressApp.swift */,
 				89C843872A120047005AABDF /* ContentView.swift */,
@@ -265,10 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B23FAD2A14886200AD7BB0 /* Constant.swift in Sources */,
 				89C8438F2A120048005AABDF /* Persistence.swift in Sources */,
+				89B23FAA2A1487F800AD7BB0 /* CoreDataViewModel.swift in Sources */,
 				89C843882A120047005AABDF /* ContentView.swift in Sources */,
 				89C843862A120047005AABDF /* BjitExpressApp.swift in Sources */,
 				89C843922A120048005AABDF /* BjitExpress.xcdatamodeld in Sources */,
+				89B23FA92A1487F800AD7BB0 /* CloudKitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
