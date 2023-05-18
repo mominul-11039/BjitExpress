@@ -14,8 +14,11 @@ class LoginViewModel : ObservableObject{
     private var currentRecordID: CKRecord.ID?
     @Published  var employeeID: String = ""
     @Published  var password: String = ""
+    @Published var confirmPassword: String = ""
+    @Published var cPasswordNotMatch:Bool?
     @Published  var employee: Employee?
     @Published var authStatus: AuthStatus?
+    @Published var cludkitError: CloudKitError?
     
     // MARK: - Fetch employee from cloudkit
     func fetchEmployee() {
@@ -23,14 +26,12 @@ class LoginViewModel : ObservableObject{
         CloudKitManager.shared.fetchRecords(predicate: predicate) { result in
             switch result {
             case .success(let records):
-                
                 if let record = records.first {
                     let emp = Employee(
                         employee_id: record["employee_id"] as? String ?? "",
                         pass: record["password"] as? String,
                         email: record["email"] as? String ?? ""
                     )
-                    
                     DispatchQueue.main.async { [self] in
                         self.employee = emp
                         self.currentRecordID = record.recordID
@@ -55,16 +56,43 @@ class LoginViewModel : ObservableObject{
     }
     
     // MARK: Update record
-    func updateRecord() -> Void {
+    func updateRecord() {
+        cPasswordNotMatch = false
         debugPrint("Update record started")
         guard let currentRecordID = currentRecordID else { return }
-        
         CloudKitManager.shared.updateRecord(recordId: currentRecordID, value: password)
     }
     
+    
+    // MARK: Login or Register button
+    func loginOrRegister(){
+        switch authStatus {
+        case .none:
+            self.fetchEmployee()
+        case .login:
+            print("login")
+            
+        case .register:
+            print("register")
+            registerUser()
+            
+        case .employeIdnotFound:
+            print("Not found")
+            authStatus = .none
+        }
+    }
+    
+    // MARK: Registration
+    func registerUser(){
+        if password == confirmPassword{
+            print("Update record lgv 84")
+            updateRecord()
+        }else{
+            cPasswordNotMatch = true
+        }
+    }
+    
 }
-
-
 enum LoginError: Error {
     case invalidEmployeeID
     case invalidPassword
@@ -74,4 +102,14 @@ enum AuthStatus {
     case login
     case register
     case employeIdnotFound
+}
+
+enum CloudKitError: String, LocalizedError {
+    case iCloudAccountNotFound
+    case iCloudAccountNotDetermined
+    case iCloudAccountRestricted
+    case iCloudAccountUnknown
+    case iCloudApplicationPermissionNotGranted
+    case iCloudCouldNotFetchUserRecordID
+    case iCloudCouldNotDiscoverUser
 }

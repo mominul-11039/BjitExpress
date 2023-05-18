@@ -4,10 +4,8 @@
 //
 //  Created by YeasirArefinTusher-11702 on 18/5/23.
 //
-
 import Foundation
 import SwiftUI
-
 struct LoginScreen: View {
     @ObservedObject private var viewModel = LoginViewModel()
     
@@ -30,7 +28,7 @@ struct LoginScreen: View {
                 SecureField("Create New Password", text: $viewModel.password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(5)
-                SecureField("Confirm Password", text: $viewModel.password)
+                SecureField("Confirm Password", text: $viewModel.confirmPassword)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(5)
             case .employeIdnotFound:
@@ -42,7 +40,7 @@ struct LoginScreen: View {
             
             
             Button($viewModel.authStatus.wrappedValue == .register ? "Register" : "Login" ) {
-                viewModel.fetchEmployee()
+                viewModel.loginOrRegister()
             }
             
         }
