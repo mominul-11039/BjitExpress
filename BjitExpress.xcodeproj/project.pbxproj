@@ -3,18 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */; };
+		89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40262A16167B00A6C3F0 /* BusListView.swift */; };
+		89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40272A16167B00A6C3F0 /* HomeView.swift */; };
+		89AE402C2A16167B00A6C3F0 /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40282A16167B00A6C3F0 /* BusView.swift */; };
+		89AE40312A162D2600A6C3F0 /* BusList.json in Resources */ = {isa = PBXBuildFile; fileRef = 89AE40302A162D2600A6C3F0 /* BusList.json */; };
+		89AE40332A162F1A00A6C3F0 /* BusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40322A162F1A00A6C3F0 /* BusModel.swift */; };
+		89AE40382A163A2E00A6C3F0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40372A163A2E00A6C3F0 /* MainView.swift */; };
 		89B23FA92A1487F800AD7BB0 /* CloudKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B23FA72A1487F800AD7BB0 /* CloudKitViewModel.swift */; };
 		89B23FAA2A1487F800AD7BB0 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B23FA82A1487F800AD7BB0 /* CoreDataViewModel.swift */; };
 		89B23FAD2A14886200AD7BB0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B23FAC2A14886200AD7BB0 /* Constant.swift */; };
+		89BBE1992A15CD800081B7DC /* BusAllocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BBE1982A15CD800081B7DC /* BusAllocationModel.swift */; };
 		89C843862A120047005AABDF /* BjitExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C843852A120047005AABDF /* BjitExpressApp.swift */; };
 		89C843882A120047005AABDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C843872A120047005AABDF /* ContentView.swift */; };
 		89C8438A2A120048005AABDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C843892A120048005AABDF /* Assets.xcassets */; };
 		89C8438D2A120048005AABDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C8438C2A120048005AABDF /* Preview Assets.xcassets */; };
-		89C8438F2A120048005AABDF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8438E2A120048005AABDF /* Persistence.swift */; };
 		89C843922A120048005AABDF /* BjitExpress.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89C843902A120048005AABDF /* BjitExpress.xcdatamodeld */; };
 		89C8439C2A120048005AABDF /* BjitExpressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8439B2A120048005AABDF /* BjitExpressTests.swift */; };
 		89C843A62A120048005AABDF /* BjitExpressUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C843A52A120048005AABDF /* BjitExpressUITests.swift */; };
@@ -39,15 +46,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewModel.swift; sourceTree = "<group>"; };
+		89AE40262A16167B00A6C3F0 /* BusListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusListView.swift; sourceTree = "<group>"; };
+		89AE40272A16167B00A6C3F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		89AE40282A16167B00A6C3F0 /* BusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusView.swift; sourceTree = "<group>"; };
+		89AE40302A162D2600A6C3F0 /* BusList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BusList.json; sourceTree = "<group>"; };
+		89AE40322A162F1A00A6C3F0 /* BusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusModel.swift; sourceTree = "<group>"; };
+		89AE40372A163A2E00A6C3F0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		89B23FA72A1487F800AD7BB0 /* CloudKitViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitViewModel.swift; sourceTree = "<group>"; };
 		89B23FA82A1487F800AD7BB0 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		89B23FAC2A14886200AD7BB0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		89BBE1982A15CD800081B7DC /* BusAllocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusAllocationModel.swift; sourceTree = "<group>"; };
 		89C843822A120047005AABDF /* BjitExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BjitExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C843852A120047005AABDF /* BjitExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BjitExpressApp.swift; sourceTree = "<group>"; };
 		89C843872A120047005AABDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		89C843892A120048005AABDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89C8438C2A120048005AABDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		89C8438E2A120048005AABDF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		89C843912A120048005AABDF /* BjitExpress.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BjitExpress.xcdatamodel; sourceTree = "<group>"; };
 		89C843972A120048005AABDF /* BjitExpressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BjitExpressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C8439B2A120048005AABDF /* BjitExpressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BjitExpressTests.swift; sourceTree = "<group>"; };
@@ -82,11 +96,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89AE40252A16167B00A6C3F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89AE40262A16167B00A6C3F0 /* BusListView.swift */,
+				89AE40272A16167B00A6C3F0 /* HomeView.swift */,
+				89AE40282A16167B00A6C3F0 /* BusView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		89AE40362A163A2E00A6C3F0 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				89AE40372A163A2E00A6C3F0 /* MainView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		89B23FA42A14879900AD7BB0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				89B23FA72A1487F800AD7BB0 /* CloudKitViewModel.swift */,
 				89B23FA82A1487F800AD7BB0 /* CoreDataViewModel.swift */,
+				89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -97,6 +130,15 @@
 				89B23FAC2A14886200AD7BB0 /* Constant.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		89BBE1972A15CD440081B7DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				89BBE1982A15CD800081B7DC /* BusAllocationModel.swift */,
+				89AE40322A162F1A00A6C3F0 /* BusModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		89C843792A120047005AABDF = {
@@ -122,13 +164,16 @@
 		89C843842A120047005AABDF /* BjitExpress */ = {
 			isa = PBXGroup;
 			children = (
+				89AE40362A163A2E00A6C3F0 /* Screens */,
+				89AE40302A162D2600A6C3F0 /* BusList.json */,
+				89AE40252A16167B00A6C3F0 /* Views */,
+				89BBE1972A15CD440081B7DC /* Models */,
 				89B23FAB2A14884D00AD7BB0 /* Utils */,
 				89B23FA42A14879900AD7BB0 /* ViewModels */,
 				89C843B42A1200E8005AABDF /* BjitExpress.entitlements */,
 				89C843852A120047005AABDF /* BjitExpressApp.swift */,
 				89C843872A120047005AABDF /* ContentView.swift */,
 				89C843892A120048005AABDF /* Assets.xcassets */,
-				89C8438E2A120048005AABDF /* Persistence.swift */,
 				89C843902A120048005AABDF /* BjitExpress.xcdatamodeld */,
 				89C8438B2A120048005AABDF /* Preview Content */,
 			);
@@ -240,7 +285,7 @@
 				};
 			};
 			buildConfigurationList = 89C8437D2A120047005AABDF /* Build configuration list for PBXProject "BjitExpress" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -265,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C8438D2A120048005AABDF /* Preview Assets.xcassets in Resources */,
+				89AE40312A162D2600A6C3F0 /* BusList.json in Resources */,
 				89C8438A2A120048005AABDF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,10 +337,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B23FAD2A14886200AD7BB0 /* Constant.swift in Sources */,
-				89C8438F2A120048005AABDF /* Persistence.swift in Sources */,
+				89AE40382A163A2E00A6C3F0 /* MainView.swift in Sources */,
+				89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */,
+				89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */,
 				89B23FAA2A1487F800AD7BB0 /* CoreDataViewModel.swift in Sources */,
+				89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */,
 				89C843882A120047005AABDF /* ContentView.swift in Sources */,
+				89BBE1992A15CD800081B7DC /* BusAllocationModel.swift in Sources */,
 				89C843862A120047005AABDF /* BjitExpressApp.swift in Sources */,
+				89AE402C2A16167B00A6C3F0 /* BusView.swift in Sources */,
+				89AE40332A162F1A00A6C3F0 /* BusModel.swift in Sources */,
 				89C843922A120048005AABDF /* BjitExpress.xcdatamodeld in Sources */,
 				89B23FA92A1487F800AD7BB0 /* CloudKitViewModel.swift in Sources */,
 			);

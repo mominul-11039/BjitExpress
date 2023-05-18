@@ -90,7 +90,18 @@ class CloudKitViewModel {
         sortDescriptions: [NSSortDescriptor]? = nil,
         resultLimit: Int? = nil,
         completion: @escaping(_ items: [T]) -> ()) {
-        
+            let operation = createOperation(predicate: predicate, recordType: recordType, sortDescriptions: sortDescriptions, resultLimit: resultLimit)
+            
+            var returnedItems: [T] = []
+            addRecordMatchedblock(operation: operation) { item in
+                returnedItems.append(item)
+            }
+            
+            addQueryResultBlock(operation: operation) { finished in
+                completion(returnedItems)
+            }
+            
+            addOperation(operation: operation)
     }
 
     static private func createOperation(
@@ -108,9 +119,9 @@ class CloudKitViewModel {
     }
 
     static private func addRecordMatchedblock<T:CloudKitableProtocol>(
-        opertation: CKQueryOperation,
+        operation: CKQueryOperation,
         completion: @escaping(_ item: T) -> ()) {
-        opertation.recordMatchedBlock = { (recordId, recordResult) in
+        operation.recordMatchedBlock = { (recordId, recordResult) in
             switch recordResult {
             case .success(let record):
                 guard let item = T(record: record) else { return }
@@ -122,16 +133,16 @@ class CloudKitViewModel {
     }
 
     static private func addQueryResultBlock(
-        opertation: CKQueryOperation,
+        operation: CKQueryOperation,
         completion: @escaping(_ isFinished: Bool) -> ()
     ) {
-        opertation.queryResultBlock = { (resultCoursor) in
+        operation.queryResultBlock = { (resultCoursor) in
             completion(true)
         }
     }
 
-    static private func addOperation(opertation: CKQueryOperation) {
-        CloudKitViewModel.ckContainer.publicCloudDatabase.add(opertation)
+    static private func addOperation(operation: CKQueryOperation) {
+        CloudKitViewModel.ckContainer.publicCloudDatabase.add(operation)
     }
 
     static func add<T:CloudKitableProtocol>(item: T, completion: @escaping (Result<Bool, Error>) -> ()) {
@@ -144,7 +155,7 @@ class CloudKitViewModel {
     }
     
     static private func save(record: CKRecord, completion: @escaping (Result<Bool, Error>) -> ()) {
-        CKContainer.default().publicCloudDatabase.save(record) { returnedRecord, returnedError in
+        CloudKitViewModel.ckContainer.publicCloudDatabase.save(record) { returnedRecord, returnedError in
             if let error = returnedError {
                 completion(.failure(error))
             } else {
@@ -164,12 +175,37 @@ class CloudKitViewModel {
     }
     
     static private func delete(record: CKRecord, completion: @escaping (Result<Bool, Error>) -> ()) {
-        CKContainer.default().publicCloudDatabase.delete(withRecordID: record.recordID) { returnedRecordID, returnedError in
+        CloudKitViewModel.ckContainer.publicCloudDatabase.delete(withRecordID: record.recordID) { returnedRecordID, returnedError in
             if let error = returnedError {
                 completion(.failure(error))
             } else {
                 completion(.success(true))
             }
         }
+    }
+
+    static func getCount (
+        predicate: NSPredicate,
+        recordType: CKRecord.RecordType,
+        sortDescriptions: [NSSortDescriptor]? = nil,
+        resultLimit: Int? = nil,
+        completion: @escaping(_ itemCount: Int) -> ()) {
+            let operation = createOperation(predicate: predicate, recordType: recordType, sortDescriptions: sortDescriptions, resultLimit: resultLimit)
+
+            var returnedItems: [CKRecord] = []
+            operation.recordMatchedBlock = { (recordId, recordResult) in
+                switch recordResult {
+                case .success(let record):
+                    returnedItems.append(record)
+                case .failure(_):
+                    break
+                }
+            }
+
+            operation.queryResultBlock = { (resultCoursor) in
+                completion(returnedItems.count)
+            }
+
+            addOperation(operation: operation)
     }
 }
