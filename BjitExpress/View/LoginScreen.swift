@@ -10,44 +10,43 @@ import SwiftUI
 
 struct LoginScreen: View {
     @ObservedObject private var viewModel = LoginViewModel()
-    @State private var showPassword = false
     
     var body: some View {
         VStack {
+            Text("Welcome")
+                
+                .fontWeight(.heavy)
             TextField("Employee ID", text: $viewModel.employeeID)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.numberPad)
-                .padding()
+                .padding(5)
             
-            if viewModel.employee != nil {
-                if !viewModel.passwordExists{
-                    SecureField("Create New Password", text: $viewModel.password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                    SecureField("Confirm Password", text: $viewModel.password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                }else{
-                    SecureField("Enter Password", text: $viewModel.password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                }
-                
+            switch viewModel.authStatus {
+            case .login:
+                SecureField("Enter Password", text: $viewModel.password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(5)
+            case .register:
+                SecureField("Create New Password", text: $viewModel.password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(5)
+                SecureField("Confirm Password", text: $viewModel.password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(5)
+            case .employeIdnotFound:
+                Text("Employee ID not found. Please write correct Emplyee ID")
+                    .foregroundColor(.red)
+            case .none:
+                EmptyView()
             }
             
-            Button(showPassword ? "Register" : "Login") {
+            
+            Button($viewModel.authStatus.wrappedValue == .register ? "Register" : "Login" ) {
                 viewModel.fetchEmployee()
-                if viewModel.passwordExists && viewModel.employee != nil{
-                    // TODO: Implement login logic
-                    showPassword = false
-                }else if !viewModel.passwordExists && viewModel.employee != nil{
-                    // TODO: Implement registration logic
-                    viewModel.updateRecord()
-                    showPassword = true
-                }
-                
             }
-            .padding()
+            
         }
+        .padding()
     }
 }
+

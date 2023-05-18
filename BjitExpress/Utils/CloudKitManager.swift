@@ -22,7 +22,7 @@ class CloudKitManager {
     //TODO:  Create a record
     
     
-    // Fetch records with a predicate
+    // MARK: Fetch records with a predicate
     func fetchRecords(predicate: NSPredicate, completion: @escaping (Result<[CKRecord], Error>) -> Void) {
         let query = CKQuery(recordType: "User", predicate: predicate)
         
@@ -35,10 +35,9 @@ class CloudKitManager {
         }
     }
     
-    // Update a record
+    // MARK: Update a record
     func updateRecord(recordId: CKRecord.ID, value: String) {
         publicDatabase.fetch(withRecordID: recordId) { record, err in
-            
             
             if let fetchedRecord = record{
                 // Modify the record

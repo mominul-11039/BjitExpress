@@ -8,18 +8,14 @@
 import Foundation
 import SwiftUI
 import CloudKit
+
 class LoginViewModel : ObservableObject{
     
     private var currentRecordID: CKRecord.ID?
-    
     @Published  var employeeID: String = ""
     @Published  var password: String = ""
     @Published  var employee: Employee?
-    @Published var employeeExists=false
-    @Published var passwordExists: Bool = false
-    
-    
-    
+    @Published var authStatus: AuthStatus?
     
     // MARK: - Fetch employee from cloudkit
     func fetchEmployee() {
@@ -27,29 +23,32 @@ class LoginViewModel : ObservableObject{
         CloudKitManager.shared.fetchRecords(predicate: predicate) { result in
             switch result {
             case .success(let records):
+                
                 if let record = records.first {
-                    let emp = Employee(employee_id: record["employee_id"] as! String, pass: record["password"] as? String, email: record["email"] as! String)
+                    let emp = Employee(
+                        employee_id: record["employee_id"] as? String ?? "",
+                        pass: record["password"] as? String,
+                        email: record["email"] as? String ?? ""
+                    )
+                    
                     DispatchQueue.main.async { [self] in
                         self.employee = emp
-                        self.employeeExists = true
                         self.currentRecordID = record.recordID
+                        // If password field not empty then login otherwise register
                         if emp.pass != nil{
-                            self.passwordExists = true
+                            self.authStatus = .login
                         }else{
-                            self.passwordExists = false
+                            self.authStatus = .register
                         }
                     }
                 } else {
                     DispatchQueue.main.async {
                         self.employee = nil
-                        self.employeeExists = false
-                        
-                        // TODO: Handle UI based on data
+                        self.authStatus = .employeIdnotFound
                     }
                 }
             case .failure(let error):
                 // TODO: Handle the error
-                
                 print("Error fetching employee: \(error.localizedDescription)")
             }
         }
@@ -61,6 +60,18 @@ class LoginViewModel : ObservableObject{
         guard let currentRecordID = currentRecordID else { return }
         
         CloudKitManager.shared.updateRecord(recordId: currentRecordID, value: password)
-        }
+    }
     
+}
+
+
+enum LoginError: Error {
+    case invalidEmployeeID
+    case invalidPassword
+}
+
+enum AuthStatus {
+    case login
+    case register
+    case employeIdnotFound
 }
