@@ -6,9 +6,19 @@
 //
 
 import Foundation
+import CloudKit
 
-struct Employee: Codable {
+struct Employee: CloudKitableProtocol {
+    var record: CKRecord
     let employee_id: String
-    let pass: String?
+    var password: String?
     let email: String
+    
+    
+    init?(record: CKRecord) {
+        self.employee_id = record["employee_id"] ?? ""
+        self.password = record["password"] ?? ""
+        self.email = record["email"] ?? ""
+        self.record = record
+    }
 }

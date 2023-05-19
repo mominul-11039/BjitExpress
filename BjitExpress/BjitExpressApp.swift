@@ -13,7 +13,7 @@ struct BjitExpressApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginScreen()
         }
     }
 }

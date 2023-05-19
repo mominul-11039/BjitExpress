@@ -8,108 +8,133 @@
 import Foundation
 import SwiftUI
 import CloudKit
+import Combine
 
 class LoginViewModel : ObservableObject{
     
-    private var currentRecordID: CKRecord.ID?
+    var cancellables = Set<AnyCancellable>()
+    var coreDataVm = CoreDataViewModel()
+    
+    
     @Published  var employeeID: String = ""
     @Published  var password: String = ""
     @Published var confirmPassword: String = ""
-    @Published var cPasswordNotMatch:Bool?
+    @Published var cPasswordNotMatch:Bool = false
     @Published  var employee: Employee?
     @Published var authStatus: AuthStatus?
     @Published var cludkitError: CloudKitError?
+    @Published var authenticated: Bool = false
+    @Published var isUserActive = false
     
     // MARK: - Fetch employee from cloudkit
-    func fetchEmployee() {
+    func fetchEmployee(){
         let predicate = NSPredicate(format: "employee_id == %@", employeeID)
-        CloudKitManager.shared.fetchRecords(predicate: predicate) { result in
-            switch result {
-            case .success(let records):
-                if let record = records.first {
-                    let emp = Employee(
-                        employee_id: record["employee_id"] as? String ?? "",
-                        pass: record["password"] as? String,
-                        email: record["email"] as? String ?? ""
-                    )
-                    DispatchQueue.main.async { [self] in
-                        self.employee = emp
-                        self.currentRecordID = record.recordID
-                        // If password field not empty then login otherwise register
-                        if emp.pass != nil{
-                            self.authStatus = .login
-                        }else{
-                            self.authStatus = .register
-                        }
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        self.employee = nil
-                        self.authStatus = .employeIdnotFound
-                    }
+        let recordType = "User"
+        CloudKitViewModel.fetch(predicate: predicate, recordType: recordType)
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+            } receiveValue: { [weak self] returnedItems in
+                
+                self?.employee = returnedItems.first
+                
+                //   If password field not empty then login otherwise register
+                if self?.employee?.password != ""{
+                    self?.authStatus = .login
+                }else{
+                    self?.authStatus = .register
                 }
-            case .failure(let error):
-                // TODO: Handle the error
-                print("Error fetching employee: \(error.localizedDescription)")
+                
             }
-        }
+            .store(in: &cancellables)
     }
+    
     
     // MARK: Update record
-    func updateRecord() {
+    func updateEmplolyeeRecord() {
         cPasswordNotMatch = false
-        debugPrint("Update record started")
-        guard let currentRecordID = currentRecordID else { return }
-        CloudKitManager.shared.updateRecord(recordId: currentRecordID, value: password)
+        if let employee = self.employee {
+            let record = employee.record
+            record.setValuesForKeys(["password": password])
+            
+            CKContainer(identifier: "iCloud.TeamCombine.bjitgroup.upskilldev")
+                .publicCloudDatabase.save(record) { record, error in
+                    if let record = record {
+                        DispatchQueue.main.async {
+                            self.password=""
+                            self.authStatus = .login
+                        }
+                    }
+                    if let error = error{
+                        print(error.localizedDescription)
+                        self.password=""
+                        self.authStatus = .none
+                    }
+                }
+        }
     }
-    
-    
+
     // MARK: Login or Register button
     func loginOrRegister(){
         switch authStatus {
         case .none:
             self.fetchEmployee()
         case .login:
-            print("login")
-            
+            login()
         case .register:
-            print("register")
             registerUser()
-            
         case .employeIdnotFound:
-            print("Not found")
             authStatus = .none
+        case .authenticated:
+            print("user authenticated")
         }
     }
-    
+
     // MARK: Registration
     func registerUser(){
         if password == confirmPassword{
-            print("Update record lgv 84")
-            updateRecord()
+            updateEmplolyeeRecord()
         }else{
             cPasswordNotMatch = true
         }
     }
+
+    // MARK: Login
+    func login(){
+        if let password = employee?.password {
+            if employee?.password == password{
+                authStatus = .authenticated
+                self.isUserActive = true
+                self.password=""
+                Constant.loggedInUserId = employee?.employee_id ?? ""
+                coreDataVm.saveEmployeeInfo(employeeId: employee?.email ?? "", email: employee?.employee_id ?? "")
+            }else{
+                self.password=""
+                authStatus = .none
+                self.isUserActive = false
+            }
+        }
+    }
+
+    // MARK: Enums
+    enum LoginError: Error {
+        case invalidEmployeeID
+        case invalidPassword
+    }
     
-}
-enum LoginError: Error {
-    case invalidEmployeeID
-    case invalidPassword
-}
-
-enum AuthStatus {
-    case login
-    case register
-    case employeIdnotFound
-}
-
-enum CloudKitError: String, LocalizedError {
-    case iCloudAccountNotFound
-    case iCloudAccountNotDetermined
-    case iCloudAccountRestricted
-    case iCloudAccountUnknown
-    case iCloudApplicationPermissionNotGranted
-    case iCloudCouldNotFetchUserRecordID
-    case iCloudCouldNotDiscoverUser
+    enum AuthStatus {
+        case login
+        case register
+        case employeIdnotFound
+        case authenticated
+    }
+    
+    enum CloudKitError: String, LocalizedError {
+        case iCloudAccountNotFound
+        case iCloudAccountNotDetermined
+        case iCloudAccountRestricted
+        case iCloudAccountUnknown
+        case iCloudApplicationPermissionNotGranted
+        case iCloudCouldNotFetchUserRecordID
+        case iCloudCouldNotDiscoverUser
+    }
 }

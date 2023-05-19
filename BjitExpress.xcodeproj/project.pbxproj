@@ -11,6 +11,8 @@
 		240C7EE82A1721F2002DB30A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C7EE72A1721F2002DB30A /* LoginScreen.swift */; };
 		240C7EEA2A1721FC002DB30A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C7EE92A1721FC002DB30A /* Employee.swift */; };
 		240C7EEC2A172228002DB30A /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C7EEB2A172228002DB30A /* CloudKitManager.swift */; };
+		240C7EEF2A178D5D002DB30A /* CDEmployee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C7EED2A178D5D002DB30A /* CDEmployee+CoreDataClass.swift */; };
+		240C7EF02A178D5D002DB30A /* CDEmployee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C7EEE2A178D5D002DB30A /* CDEmployee+CoreDataProperties.swift */; };
 		89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */; };
 		89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40262A16167B00A6C3F0 /* BusListView.swift */; };
 		89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40272A16167B00A6C3F0 /* HomeView.swift */; };
@@ -54,6 +56,8 @@
 		240C7EE72A1721F2002DB30A /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		240C7EE92A1721FC002DB30A /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		240C7EEB2A172228002DB30A /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		240C7EED2A178D5D002DB30A /* CDEmployee+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEmployee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		240C7EEE2A178D5D002DB30A /* CDEmployee+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEmployee+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewModel.swift; sourceTree = "<group>"; };
 		89AE40262A16167B00A6C3F0 /* BusListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusListView.swift; sourceTree = "<group>"; };
 		89AE40272A16167B00A6C3F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 		89BBE1972A15CD440081B7DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				240C7EED2A178D5D002DB30A /* CDEmployee+CoreDataClass.swift */,
+				240C7EEE2A178D5D002DB30A /* CDEmployee+CoreDataProperties.swift */,
 				240C7EE92A1721FC002DB30A /* Employee.swift */,
 				89BBE1982A15CD800081B7DC /* BusAllocationModel.swift */,
 				89AE40322A162F1A00A6C3F0 /* BusModel.swift */,
@@ -348,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240C7EF02A178D5D002DB30A /* CDEmployee+CoreDataProperties.swift in Sources */,
 				89B23FAD2A14886200AD7BB0 /* Constant.swift in Sources */,
 				89AE40382A163A2E00A6C3F0 /* MainView.swift in Sources */,
 				89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */,
@@ -358,6 +365,7 @@
 				240C7EE62A1721B8002DB30A /* LoginViewModel.swift in Sources */,
 				89C843882A120047005AABDF /* ContentView.swift in Sources */,
 				89BBE1992A15CD800081B7DC /* BusAllocationModel.swift in Sources */,
+				240C7EEF2A178D5D002DB30A /* CDEmployee+CoreDataClass.swift in Sources */,
 				240C7EEA2A1721FC002DB30A /* Employee.swift in Sources */,
 				89C843862A120047005AABDF /* BjitExpressApp.swift in Sources */,
 				89AE402C2A16167B00A6C3F0 /* BusView.swift in Sources */,
