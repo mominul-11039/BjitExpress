@@ -64,14 +64,13 @@ class CoreDataViewModel {
     // MARK: Save employee info into CoreData
     func saveEmployeeInfo(employeeId: String, email: String) {
         if checkIfEmployeeExists(employeeId: employeeId){
+            print("employee already exists")
+        }else{
             let employeeInfo = CDEmployee(context: container.viewContext)
             employeeInfo.employee_id = employeeId
             employeeInfo.email = email
             saveData()
-        }else{
-            print("employee already exists")
         }
-        
     }
     
     // MARK: Check if employe already exists in coredata
