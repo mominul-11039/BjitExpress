@@ -1,0 +1,27 @@
+[
+    {
+        "busName": "Bus #001",
+        "departureTime": "07:20",
+        "busID": 1
+   },
+    {
+        "busName": "Bus #002",
+        "departureTime": "07:28",
+        "busID": 2
+   },
+    {
+        "busName": "Bus #003",
+        "departureTime": "07:35",
+        "busID": 3
+   },
+    {
+        "busName": "Bus #004",
+        "departureTime": "07:42",
+        "busID": 4
+   },
+    {
+        "busName": "Bus #005",
+        "departureTime": "07:50",
+        "busID": 5
+   }
+]
