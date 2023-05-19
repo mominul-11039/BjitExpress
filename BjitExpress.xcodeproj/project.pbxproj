@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185CE5D12A171E24004CFDF0 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185CE5D02A171E24004CFDF0 /* LocationViewModel.swift */; };
+		185CE5D32A171E7A004CFDF0 /* StartTrackingBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185CE5D22A171E7A004CFDF0 /* StartTrackingBtnView.swift */; };
+		185CE5D72A1730C9004CFDF0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185CE5D62A1730C9004CFDF0 /* NetworkManager.swift */; };
+		185CE5D92A173C5A004CFDF0 /* BusReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185CE5D82A173C5A004CFDF0 /* BusReservationViewModel.swift */; };
+		616626A04E2995E7217CF75D /* Pods_BjitExpressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEA6B8B5C815E4F767BD341 /* Pods_BjitExpressTests.framework */; };
+		69C31DD82DBB647E783B663B /* Pods_BjitExpress_BjitExpressUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A45CA089B9C3037F79D891 /* Pods_BjitExpress_BjitExpressUITests.framework */; };
 		89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */; };
 		89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40262A16167B00A6C3F0 /* BusListView.swift */; };
 		89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40272A16167B00A6C3F0 /* HomeView.swift */; };
@@ -26,6 +32,7 @@
 		89C8439C2A120048005AABDF /* BjitExpressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8439B2A120048005AABDF /* BjitExpressTests.swift */; };
 		89C843A62A120048005AABDF /* BjitExpressUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C843A52A120048005AABDF /* BjitExpressUITests.swift */; };
 		89C843A82A120048005AABDF /* BjitExpressUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C843A72A120048005AABDF /* BjitExpressUITestsLaunchTests.swift */; };
+		B4C59F5B8E0B669891EE700C /* Pods_BjitExpress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A406E34BB3AE80968035035 /* Pods_BjitExpress.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +53,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		185CE5D02A171E24004CFDF0 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		185CE5D22A171E7A004CFDF0 /* StartTrackingBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTrackingBtnView.swift; sourceTree = "<group>"; };
+		185CE5D42A171F19004CFDF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		185CE5D62A1730C9004CFDF0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		185CE5D82A173C5A004CFDF0 /* BusReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusReservationViewModel.swift; sourceTree = "<group>"; };
+		5D800DD90E6F511D5911D6A2 /* Pods-BjitExpress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BjitExpress.debug.xcconfig"; path = "Target Support Files/Pods-BjitExpress/Pods-BjitExpress.debug.xcconfig"; sourceTree = "<group>"; };
+		6A406E34BB3AE80968035035 /* Pods_BjitExpress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BjitExpress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FC20910D90338491BF551CF /* Pods-BjitExpress-BjitExpressUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BjitExpress-BjitExpressUITests.debug.xcconfig"; path = "Target Support Files/Pods-BjitExpress-BjitExpressUITests/Pods-BjitExpress-BjitExpressUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FDD3885973E186867F6D43E /* Pods-BjitExpressTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BjitExpressTests.debug.xcconfig"; path = "Target Support Files/Pods-BjitExpressTests/Pods-BjitExpressTests.debug.xcconfig"; sourceTree = "<group>"; };
+		84A45CA089B9C3037F79D891 /* Pods_BjitExpress_BjitExpressUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BjitExpress_BjitExpressUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewModel.swift; sourceTree = "<group>"; };
 		89AE40262A16167B00A6C3F0 /* BusListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusListView.swift; sourceTree = "<group>"; };
 		89AE40272A16167B00A6C3F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -69,6 +86,10 @@
 		89C843A52A120048005AABDF /* BjitExpressUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BjitExpressUITests.swift; sourceTree = "<group>"; };
 		89C843A72A120048005AABDF /* BjitExpressUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BjitExpressUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		89C843B42A1200E8005AABDF /* BjitExpress.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BjitExpress.entitlements; sourceTree = "<group>"; };
+		9B4812928AD2F1C6F7964CAB /* Pods-BjitExpress-BjitExpressUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BjitExpress-BjitExpressUITests.release.xcconfig"; path = "Target Support Files/Pods-BjitExpress-BjitExpressUITests/Pods-BjitExpress-BjitExpressUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A23F4F67442A935E6E6059B1 /* Pods-BjitExpress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BjitExpress.release.xcconfig"; path = "Target Support Files/Pods-BjitExpress/Pods-BjitExpress.release.xcconfig"; sourceTree = "<group>"; };
+		CD5CA41D9AB32B19230B0A13 /* Pods-BjitExpressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BjitExpressTests.release.xcconfig"; path = "Target Support Files/Pods-BjitExpressTests/Pods-BjitExpressTests.release.xcconfig"; sourceTree = "<group>"; };
+		DBEA6B8B5C815E4F767BD341 /* Pods_BjitExpressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BjitExpressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4C59F5B8E0B669891EE700C /* Pods_BjitExpress.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				616626A04E2995E7217CF75D /* Pods_BjitExpressTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,18 +113,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69C31DD82DBB647E783B663B /* Pods_BjitExpress_BjitExpressUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076B9E03AC0E08661AA81590 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A406E34BB3AE80968035035 /* Pods_BjitExpress.framework */,
+				84A45CA089B9C3037F79D891 /* Pods_BjitExpress_BjitExpressUITests.framework */,
+				DBEA6B8B5C815E4F767BD341 /* Pods_BjitExpressTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		185CE5D52A17308F004CFDF0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				185CE5D62A1730C9004CFDF0 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		89AE40252A16167B00A6C3F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				89AE40262A16167B00A6C3F0 /* BusListView.swift */,
 				89AE40272A16167B00A6C3F0 /* HomeView.swift */,
 				89AE40282A16167B00A6C3F0 /* BusView.swift */,
+				185CE5D22A171E7A004CFDF0 /* StartTrackingBtnView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,6 +163,8 @@
 				89B23FA72A1487F800AD7BB0 /* CloudKitViewModel.swift */,
 				89B23FA82A1487F800AD7BB0 /* CoreDataViewModel.swift */,
 				89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */,
+				185CE5D02A171E24004CFDF0 /* LocationViewModel.swift */,
+				185CE5D82A173C5A004CFDF0 /* BusReservationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -148,6 +193,8 @@
 				89C8439A2A120048005AABDF /* BjitExpressTests */,
 				89C843A42A120048005AABDF /* BjitExpressUITests */,
 				89C843832A120047005AABDF /* Products */,
+				BB782CD6C96CDB3F45BDE815 /* Pods */,
+				076B9E03AC0E08661AA81590 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +211,8 @@
 		89C843842A120047005AABDF /* BjitExpress */ = {
 			isa = PBXGroup;
 			children = (
+				185CE5D52A17308F004CFDF0 /* Networking */,
+				185CE5D42A171F19004CFDF0 /* Info.plist */,
 				89AE40362A163A2E00A6C3F0 /* Screens */,
 				89AE40302A162D2600A6C3F0 /* BusList.json */,
 				89AE40252A16167B00A6C3F0 /* Views */,
@@ -205,6 +254,19 @@
 			path = BjitExpressUITests;
 			sourceTree = "<group>";
 		};
+		BB782CD6C96CDB3F45BDE815 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D800DD90E6F511D5911D6A2 /* Pods-BjitExpress.debug.xcconfig */,
+				A23F4F67442A935E6E6059B1 /* Pods-BjitExpress.release.xcconfig */,
+				6FC20910D90338491BF551CF /* Pods-BjitExpress-BjitExpressUITests.debug.xcconfig */,
+				9B4812928AD2F1C6F7964CAB /* Pods-BjitExpress-BjitExpressUITests.release.xcconfig */,
+				7FDD3885973E186867F6D43E /* Pods-BjitExpressTests.debug.xcconfig */,
+				CD5CA41D9AB32B19230B0A13 /* Pods-BjitExpressTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,9 +274,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89C843AB2A120048005AABDF /* Build configuration list for PBXNativeTarget "BjitExpress" */;
 			buildPhases = (
+				7D1C23A69D7F26AB780AA954 /* [CP] Check Pods Manifest.lock */,
 				89C8437E2A120047005AABDF /* Sources */,
 				89C8437F2A120047005AABDF /* Frameworks */,
 				89C843802A120047005AABDF /* Resources */,
+				C3D0CF11D6AA62832AC636AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,6 +293,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89C843AE2A120048005AABDF /* Build configuration list for PBXNativeTarget "BjitExpressTests" */;
 			buildPhases = (
+				1953C9DC02ACC9C560384AAA /* [CP] Check Pods Manifest.lock */,
 				89C843932A120048005AABDF /* Sources */,
 				89C843942A120048005AABDF /* Frameworks */,
 				89C843952A120048005AABDF /* Resources */,
@@ -247,9 +312,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89C843B12A120048005AABDF /* Build configuration list for PBXNativeTarget "BjitExpressUITests" */;
 			buildPhases = (
+				C2CD968FDC1A403F3D4D7C8A /* [CP] Check Pods Manifest.lock */,
 				89C8439D2A120048005AABDF /* Sources */,
 				89C8439E2A120048005AABDF /* Frameworks */,
 				89C8439F2A120048005AABDF /* Resources */,
+				7BB652FA4F8FAD2427FD28F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,22 +398,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1953C9DC02ACC9C560384AAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BjitExpressTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BB652FA4F8FAD2427FD28F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BjitExpress-BjitExpressUITests/Pods-BjitExpress-BjitExpressUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BjitExpress-BjitExpressUITests/Pods-BjitExpress-BjitExpressUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BjitExpress-BjitExpressUITests/Pods-BjitExpress-BjitExpressUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D1C23A69D7F26AB780AA954 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BjitExpress-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2CD968FDC1A403F3D4D7C8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BjitExpress-BjitExpressUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3D0CF11D6AA62832AC636AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BjitExpress/Pods-BjitExpress-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BjitExpress/Pods-BjitExpress-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BjitExpress/Pods-BjitExpress-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		89C8437E2A120047005AABDF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				89B23FAD2A14886200AD7BB0 /* Constant.swift in Sources */,
+				185CE5D92A173C5A004CFDF0 /* BusReservationViewModel.swift in Sources */,
 				89AE40382A163A2E00A6C3F0 /* MainView.swift in Sources */,
 				89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */,
 				89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */,
+				185CE5D72A1730C9004CFDF0 /* NetworkManager.swift in Sources */,
 				89B23FAA2A1487F800AD7BB0 /* CoreDataViewModel.swift in Sources */,
+				185CE5D32A171E7A004CFDF0 /* StartTrackingBtnView.swift in Sources */,
 				89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */,
 				89C843882A120047005AABDF /* ContentView.swift in Sources */,
 				89BBE1992A15CD800081B7DC /* BusAllocationModel.swift in Sources */,
 				89C843862A120047005AABDF /* BjitExpressApp.swift in Sources */,
 				89AE402C2A16167B00A6C3F0 /* BusView.swift in Sources */,
 				89AE40332A162F1A00A6C3F0 /* BusModel.swift in Sources */,
+				185CE5D12A171E24004CFDF0 /* LocationViewModel.swift in Sources */,
 				89C843922A120048005AABDF /* BjitExpress.xcdatamodeld in Sources */,
 				89B23FA92A1487F800AD7BB0 /* CloudKitViewModel.swift in Sources */,
 			);
@@ -501,6 +675,7 @@
 		};
 		89C843AC2A120048005AABDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D800DD90E6F511D5911D6A2 /* Pods-BjitExpress.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -512,13 +687,15 @@
 				DEVELOPMENT_TEAM = 2BL4KQW6R5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BjitExpress/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BjitExpress;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To identify your exact localiton please allow the permission.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -536,6 +713,7 @@
 		};
 		89C843AD2A120048005AABDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A23F4F67442A935E6E6059B1 /* Pods-BjitExpress.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -547,13 +725,15 @@
 				DEVELOPMENT_TEAM = 2BL4KQW6R5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BjitExpress/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BjitExpress;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To identify your exact localiton please allow the permission.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -571,6 +751,7 @@
 		};
 		89C843AF2A120048005AABDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FDD3885973E186867F6D43E /* Pods-BjitExpressTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -591,6 +772,7 @@
 		};
 		89C843B02A120048005AABDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD5CA41D9AB32B19230B0A13 /* Pods-BjitExpressTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -611,6 +793,7 @@
 		};
 		89C843B22A120048005AABDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FC20910D90338491BF551CF /* Pods-BjitExpress-BjitExpressUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -629,6 +812,7 @@
 		};
 		89C843B32A120048005AABDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B4812928AD2F1C6F7964CAB /* Pods-BjitExpress-BjitExpressUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

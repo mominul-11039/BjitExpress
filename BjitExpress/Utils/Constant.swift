@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import CoreLocation
 
 public class Constant {
     public static let cloudKitContainerName = "iCloud.TeamCombine.bjitgroup.upskilldev"
     public static let coreDataContainerName = "BjitExpress"
     public static var loggedInUserId: String = "11039"
+    public static var APIKEY: String = "AIzaSyCNBoNrWX5TuGtk64gPDdDbskKfbHgvpkM"
+    public static let busAllocationRecordType = "Bus_Allocation"
+    public static var userLocation: CLLocationCoordinate2D?
     public static let busList: [Int] = [1, 2, 3, 4, 5]
     func getCurrentDate()-> String {
         let date = Date()
