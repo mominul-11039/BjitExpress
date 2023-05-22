@@ -105,7 +105,7 @@ class LoginViewModel : ObservableObject{
                 authStatus = .authenticated
                 self.isUserActive = true
                 self.password=""
-                Constant.loggedInUserId = employee?.employee_id ?? ""
+                UserDefaults.standard.set(employee?.employee_id, forKey: Constant.loggedInUserIdString)
                 coreDataVm.saveEmployeeInfo(employeeId: employee?.email ?? "", email: employee?.employee_id ?? "")
             }else{
                 self.password=""

@@ -8,31 +8,40 @@
 import SwiftUI
 
 struct StartTrackingBtnView: View {
+    // MARK: - PROPERTIES
     var location: LocationViewModel
+    var busVM =  BusReservationViewModel.shared
+    @AppStorage("\(Constant.currentDate)") var isCheckedIn: Bool = false
+    @AppStorage("day-\(Constant.currentDate)") var isStartTracking: Bool = false
+    let updateVM = UpdateViewModel.shared
 
-    var body: some View {
-        Button {
-            location.requestLocation()
-            NetworkManager().calculateDuration()
-        } label: {
-            Text("Start")
-                .foregroundColor(.white)
-                .fontWeight(.medium)
-                .frame(maxWidth: 250)
-                .padding()
-                .background(Color.accentColor)
-                .cornerRadius(8)
-        } //: BUTTON
-        .padding()
-        .background(.ultraThinMaterial)
-    }
-}
-
-struct StartTrackingBtnView_Previews: PreviewProvider {
-    static var previews: some View {
-        StartTrackingBtnView(location: LocationViewModel())
-            .preferredColorScheme(.dark)
-            .previewLayout(.sizeThatFits)
+    // MARK: - VIEW
+        var body: some View {
+            Button {
+                if !isStartTracking {
+                    isStartTracking = true
+                    location.requestLocation()
+                    NetworkManager().calculateDuration()
+                    updateVM.startTimer()
+                } else {
+                    if !isCheckedIn {
+                        isCheckedIn = true
+                        busVM.userCheckedIn()
+                        updateVM.stopTimer()
+                    }
+                }
+            } label: {
+                Text(isStartTracking ? "Checked In": "Start")
+                    .foregroundColor(.white)
+                    .fontWeight(.medium)
+                    .frame(maxWidth: 250)
+                    .padding()
+                    .background(Color.accentColor)
+                    .cornerRadius(8)
+            } //: BUTTON
             .padding()
-    }
+            .background(.ultraThinMaterial)
+            .disabled(isCheckedIn)
+        }
 }
+

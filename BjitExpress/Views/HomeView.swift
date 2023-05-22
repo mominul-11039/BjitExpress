@@ -10,6 +10,7 @@ import MapKit
 
 struct HomeView: View {
     @StateObject private var locationVM = LocationViewModel()
+    var busRVM = BusReservationViewModel.shared
         
     var body: some View {
         VStack(spacing: 0) {

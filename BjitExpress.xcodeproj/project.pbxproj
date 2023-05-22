@@ -20,6 +20,7 @@
 		8989C2C02A1B1A610018C799 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2BD2A1B1A610018C799 /* Employee.swift */; };
 		8989C2C12A1B1A610018C799 /* CDEmployee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2BE2A1B1A610018C799 /* CDEmployee+CoreDataProperties.swift */; };
 		8989C2C32A1B1A6E0018C799 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2C22A1B1A6E0018C799 /* LoginViewModel.swift */; };
+		8989C2C52A1B1F5E0018C799 /* UpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2C42A1B1F5E0018C799 /* UpdateViewModel.swift */; };
 		89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */; };
 		89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40262A16167B00A6C3F0 /* BusListView.swift */; };
 		89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40272A16167B00A6C3F0 /* HomeView.swift */; };
@@ -77,6 +78,7 @@
 		8989C2BD2A1B1A610018C799 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		8989C2BE2A1B1A610018C799 /* CDEmployee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDEmployee+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8989C2C22A1B1A6E0018C799 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8989C2C42A1B1F5E0018C799 /* UpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewModel.swift; sourceTree = "<group>"; };
 		89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewModel.swift; sourceTree = "<group>"; };
 		89AE40262A16167B00A6C3F0 /* BusListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusListView.swift; sourceTree = "<group>"; };
 		89AE40272A16167B00A6C3F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */,
 				185CE5D02A171E24004CFDF0 /* LocationViewModel.swift */,
 				185CE5D82A173C5A004CFDF0 /* BusReservationViewModel.swift */,
+				8989C2C42A1B1F5E0018C799 /* UpdateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 			files = (
 				89B23FAD2A14886200AD7BB0 /* Constant.swift in Sources */,
 				185CE5D92A173C5A004CFDF0 /* BusReservationViewModel.swift in Sources */,
+				8989C2C52A1B1F5E0018C799 /* UpdateViewModel.swift in Sources */,
 				8989C2B92A1B13610018C799 /* EngineerListView.swift in Sources */,
 				8989C2C02A1B1A610018C799 /* Employee.swift in Sources */,
 				89AE40382A163A2E00A6C3F0 /* MainView.swift in Sources */,
