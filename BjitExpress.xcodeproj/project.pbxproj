@@ -15,6 +15,11 @@
 		69C31DD82DBB647E783B663B /* Pods_BjitExpress_BjitExpressUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A45CA089B9C3037F79D891 /* Pods_BjitExpress_BjitExpressUITests.framework */; };
 		8989C2B72A1B132C0018C799 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2B62A1B132C0018C799 /* Utils.swift */; };
 		8989C2B92A1B13610018C799 /* EngineerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2B82A1B13610018C799 /* EngineerListView.swift */; };
+		8989C2BB2A1B1A540018C799 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2BA2A1B1A540018C799 /* LoginScreen.swift */; };
+		8989C2BF2A1B1A610018C799 /* CDEmployee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2BC2A1B1A610018C799 /* CDEmployee+CoreDataClass.swift */; };
+		8989C2C02A1B1A610018C799 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2BD2A1B1A610018C799 /* Employee.swift */; };
+		8989C2C12A1B1A610018C799 /* CDEmployee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2BE2A1B1A610018C799 /* CDEmployee+CoreDataProperties.swift */; };
+		8989C2C32A1B1A6E0018C799 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2C22A1B1A6E0018C799 /* LoginViewModel.swift */; };
 		89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */; };
 		89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40262A16167B00A6C3F0 /* BusListView.swift */; };
 		89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40272A16167B00A6C3F0 /* HomeView.swift */; };
@@ -67,6 +72,11 @@
 		84A45CA089B9C3037F79D891 /* Pods_BjitExpress_BjitExpressUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BjitExpress_BjitExpressUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8989C2B62A1B132C0018C799 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8989C2B82A1B13610018C799 /* EngineerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineerListView.swift; sourceTree = "<group>"; };
+		8989C2BA2A1B1A540018C799 /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		8989C2BC2A1B1A610018C799 /* CDEmployee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDEmployee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8989C2BD2A1B1A610018C799 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		8989C2BE2A1B1A610018C799 /* CDEmployee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDEmployee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8989C2C22A1B1A6E0018C799 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewModel.swift; sourceTree = "<group>"; };
 		89AE40262A16167B00A6C3F0 /* BusListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusListView.swift; sourceTree = "<group>"; };
 		89AE40272A16167B00A6C3F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -145,6 +155,7 @@
 		89AE40252A16167B00A6C3F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8989C2BA2A1B1A540018C799 /* LoginScreen.swift */,
 				89AE40262A16167B00A6C3F0 /* BusListView.swift */,
 				89AE40272A16167B00A6C3F0 /* HomeView.swift */,
 				89AE40282A16167B00A6C3F0 /* BusView.swift */,
@@ -165,6 +176,7 @@
 		89B23FA42A14879900AD7BB0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				8989C2C22A1B1A6E0018C799 /* LoginViewModel.swift */,
 				89B23FA72A1487F800AD7BB0 /* CloudKitViewModel.swift */,
 				89B23FA82A1487F800AD7BB0 /* CoreDataViewModel.swift */,
 				89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */,
@@ -186,6 +198,9 @@
 		89BBE1972A15CD440081B7DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8989C2BC2A1B1A610018C799 /* CDEmployee+CoreDataClass.swift */,
+				8989C2BE2A1B1A610018C799 /* CDEmployee+CoreDataProperties.swift */,
+				8989C2BD2A1B1A610018C799 /* Employee.swift */,
 				89BBE1982A15CD800081B7DC /* BusAllocationModel.swift */,
 				89AE40322A162F1A00A6C3F0 /* BusModel.swift */,
 			);
@@ -515,12 +530,15 @@
 				89B23FAD2A14886200AD7BB0 /* Constant.swift in Sources */,
 				185CE5D92A173C5A004CFDF0 /* BusReservationViewModel.swift in Sources */,
 				8989C2B92A1B13610018C799 /* EngineerListView.swift in Sources */,
+				8989C2C02A1B1A610018C799 /* Employee.swift in Sources */,
 				89AE40382A163A2E00A6C3F0 /* MainView.swift in Sources */,
+				8989C2BF2A1B1A610018C799 /* CDEmployee+CoreDataClass.swift in Sources */,
 				89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */,
 				89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */,
 				185CE5D72A1730C9004CFDF0 /* NetworkManager.swift in Sources */,
 				89B23FAA2A1487F800AD7BB0 /* CoreDataViewModel.swift in Sources */,
 				185CE5D32A171E7A004CFDF0 /* StartTrackingBtnView.swift in Sources */,
+				8989C2BB2A1B1A540018C799 /* LoginScreen.swift in Sources */,
 				89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */,
 				89C843882A120047005AABDF /* ContentView.swift in Sources */,
 				89BBE1992A15CD800081B7DC /* BusAllocationModel.swift in Sources */,
@@ -529,7 +547,9 @@
 				89AE402C2A16167B00A6C3F0 /* BusView.swift in Sources */,
 				89AE40332A162F1A00A6C3F0 /* BusModel.swift in Sources */,
 				185CE5D12A171E24004CFDF0 /* LocationViewModel.swift in Sources */,
+				8989C2C32A1B1A6E0018C799 /* LoginViewModel.swift in Sources */,
 				89C843922A120048005AABDF /* BjitExpress.xcdatamodeld in Sources */,
+				8989C2C12A1B1A610018C799 /* CDEmployee+CoreDataProperties.swift in Sources */,
 				89B23FA92A1487F800AD7BB0 /* CloudKitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

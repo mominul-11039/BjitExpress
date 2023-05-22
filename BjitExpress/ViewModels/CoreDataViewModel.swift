@@ -65,7 +65,6 @@ class CoreDataViewModel {
         }
     }
 
-    
     func busTimeReschedule() {
         let currentTimeInMinutes = getCurrentTimeInMinutes()
         self.todaysBusSchedule = todaysBusSchedule.map({ bus in
@@ -84,6 +83,52 @@ class CoreDataViewModel {
             return bus
         })
         print("")
+    }
+
+    // MARK: Save employee info into CoreData
+    func saveEmployeeInfo(employeeId: String, email: String) {
+        if checkIfEmployeeExists(employeeId: employeeId){
+            print("employee already exists")
+        }else{
+            let employeeInfo = CDEmployee(context: container.viewContext)
+            employeeInfo.employee_id = employeeId
+            employeeInfo.email = email
+            saveData()
+        }
+    }
+
+    // MARK: Check if employe already exists in coredata
+    func checkIfEmployeeExists(employeeId: String) -> Bool {
+        let predicate = NSPredicate(format: "employee_id == %@", employeeId)
+        let request = NSFetchRequest<CDEmployee>(entityName: "CDEmployee")
+        request.predicate = predicate
+        var employeeList: [CDEmployee] = []
+        do {
+            employeeList = try container.viewContext.fetch(request)
+            if employeeList.count > 0 {
+                return true
+            }
+        } catch let error {
+            print("Error fetching. \(error)")
+        }
+        return false
+    }
+
+    // MARK: Fetch Employee info
+    func fetchEmployeeInfo(employeeId: String) -> CDEmployee? {
+        let predicate = NSPredicate(format: "employee_id == %@", employeeId)
+        let request = NSFetchRequest<CDEmployee>(entityName: "CDEmployee")
+        request.predicate = predicate
+        var employeeList: [CDEmployee] = []
+        do {
+            employeeList = try container.viewContext.fetch(request)
+            if employeeList.count > 0 {
+                return employeeList[0]
+            }
+        } catch let error {
+            print("Error fetching. \(error)")
+        }
+        return nil
     }
 
 }
