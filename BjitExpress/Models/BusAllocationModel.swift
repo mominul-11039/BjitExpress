@@ -8,7 +8,8 @@
 import Foundation
 import CloudKit
 
-struct BusAllocationModel: Hashable, CloudKitableProtocol {
+struct BusAllocationModel: Hashable, CloudKitableProtocol, Identifiable {
+    var id = UUID()
     let employeeId: String
     let reachTime: Int
     let allocatedBusNo: Int

@@ -13,6 +13,8 @@
 		185CE5D92A173C5A004CFDF0 /* BusReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185CE5D82A173C5A004CFDF0 /* BusReservationViewModel.swift */; };
 		616626A04E2995E7217CF75D /* Pods_BjitExpressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEA6B8B5C815E4F767BD341 /* Pods_BjitExpressTests.framework */; };
 		69C31DD82DBB647E783B663B /* Pods_BjitExpress_BjitExpressUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A45CA089B9C3037F79D891 /* Pods_BjitExpress_BjitExpressUITests.framework */; };
+		8989C2B72A1B132C0018C799 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2B62A1B132C0018C799 /* Utils.swift */; };
+		8989C2B92A1B13610018C799 /* EngineerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989C2B82A1B13610018C799 /* EngineerListView.swift */; };
 		89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */; };
 		89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40262A16167B00A6C3F0 /* BusListView.swift */; };
 		89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE40272A16167B00A6C3F0 /* HomeView.swift */; };
@@ -63,6 +65,8 @@
 		6FC20910D90338491BF551CF /* Pods-BjitExpress-BjitExpressUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BjitExpress-BjitExpressUITests.debug.xcconfig"; path = "Target Support Files/Pods-BjitExpress-BjitExpressUITests/Pods-BjitExpress-BjitExpressUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FDD3885973E186867F6D43E /* Pods-BjitExpressTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BjitExpressTests.debug.xcconfig"; path = "Target Support Files/Pods-BjitExpressTests/Pods-BjitExpressTests.debug.xcconfig"; sourceTree = "<group>"; };
 		84A45CA089B9C3037F79D891 /* Pods_BjitExpress_BjitExpressUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BjitExpress_BjitExpressUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8989C2B62A1B132C0018C799 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		8989C2B82A1B13610018C799 /* EngineerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineerListView.swift; sourceTree = "<group>"; };
 		89AE40222A15FD5F00A6C3F0 /* BusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewModel.swift; sourceTree = "<group>"; };
 		89AE40262A16167B00A6C3F0 /* BusListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusListView.swift; sourceTree = "<group>"; };
 		89AE40272A16167B00A6C3F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				89AE40272A16167B00A6C3F0 /* HomeView.swift */,
 				89AE40282A16167B00A6C3F0 /* BusView.swift */,
 				185CE5D22A171E7A004CFDF0 /* StartTrackingBtnView.swift */,
+				8989C2B82A1B13610018C799 /* EngineerListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				89B23FAC2A14886200AD7BB0 /* Constant.swift */,
+				8989C2B62A1B132C0018C799 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -508,6 +514,7 @@
 			files = (
 				89B23FAD2A14886200AD7BB0 /* Constant.swift in Sources */,
 				185CE5D92A173C5A004CFDF0 /* BusReservationViewModel.swift in Sources */,
+				8989C2B92A1B13610018C799 /* EngineerListView.swift in Sources */,
 				89AE40382A163A2E00A6C3F0 /* MainView.swift in Sources */,
 				89AE402A2A16167B00A6C3F0 /* BusListView.swift in Sources */,
 				89AE40232A15FD5F00A6C3F0 /* BusViewModel.swift in Sources */,
@@ -517,6 +524,7 @@
 				89AE402B2A16167B00A6C3F0 /* HomeView.swift in Sources */,
 				89C843882A120047005AABDF /* ContentView.swift in Sources */,
 				89BBE1992A15CD800081B7DC /* BusAllocationModel.swift in Sources */,
+				8989C2B72A1B132C0018C799 /* Utils.swift in Sources */,
 				89C843862A120047005AABDF /* BjitExpressApp.swift in Sources */,
 				89AE402C2A16167B00A6C3F0 /* BusView.swift in Sources */,
 				89AE40332A162F1A00A6C3F0 /* BusModel.swift in Sources */,

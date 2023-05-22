@@ -4,5 +4,6 @@
         <attribute name="bus_no" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="current_date" optional="YES" attributeType="String"/>
         <attribute name="departure_time" optional="YES" attributeType="String"/>
+        <attribute name="is_reschedule" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
 </model>

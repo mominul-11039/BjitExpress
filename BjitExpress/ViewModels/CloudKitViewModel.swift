@@ -18,6 +18,10 @@ class CloudKitViewModel {
 
     static let ckContainer = CKContainer(identifier: Constant.cloudKitContainerName)
 
+    init() {
+        CloudKitViewModel.requestApplicationPermission()
+    }
+
     enum CloudKitError: String, LocalizedError {
         case iCloudAccountNotFound
         case iCloudAccountNotDetermined
