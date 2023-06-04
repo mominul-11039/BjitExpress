@@ -11,8 +11,9 @@ import CoreLocation
 public class Constant {
     public static let cloudKitContainerName = "iCloud.TeamCombine.bjitgroup.upskilldev"
     public static let coreDataContainerName = "BjitExpress"
+    public static var loggedInUserId: String = "11039"
+    public static var APIKEY: String = "Enter_your_key"
     public static var loggedInUserIdString: String = "LoogedInUserID"
-    public static var APIKEY: String = "AIzaSyCNBoNrWX5TuGtk64gPDdDbskKfbHgvpkM"
     public static let busAllocationRecordType = "Bus_Allocation"
     public static let currentDate = "\(Calendar.current.component(.day, from: Date()))"
     public static var userLocation: CLLocationCoordinate2D?

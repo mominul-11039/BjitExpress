@@ -2,7 +2,7 @@
 //  NetworkManager.swift
 //  BjitExpress
 //
-//  Created by apple on 2023/05/19.
+//  Created by Sadat Ahmed on 2023/05/19.
 //
 
 import Foundation
@@ -12,9 +12,6 @@ import MapKit
 struct NetworkManager {
     let busReservationViewModel = BusReservationViewModel.shared
     
-    init() {
-    }
-    
     func calculateDuration() {
         let origin = "\(Constant.userLocation!.latitude),\(String(describing: Constant.userLocation!.longitude))"
         print(origin)
@@ -23,10 +20,8 @@ struct NetworkManager {
         let destinationLocation = CLLocation(latitude: 23.797530,
                                      longitude: 90.423378)
         let destination = "23.797530,90.423378"
-
-        let apiKey = "AIzaSyCNBoNrWX5TuGtk64gPDdDbskKfbHgvpkM"
-
-        guard let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&key=\(apiKey)") else {
+ 
+        guard let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&key=\(Constant.APIKEY)") else {
             seatAllocation(currentLocation: currentLocation, destinationLocation: destinationLocation)
             return
         }
