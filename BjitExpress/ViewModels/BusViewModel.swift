@@ -11,6 +11,7 @@ import Combine
 
 class BusViewModel: ObservableObject {
     @Published var busAllocationList: [BusAllocationModel] = []
+    var vm: CloudKitViewModel = CloudKitViewModel()
     @Published var myALlocatedbus: Int = 0
     var cancellables = Set<AnyCancellable>()
 
@@ -32,8 +33,9 @@ class BusViewModel: ObservableObject {
 
     func getBusWiseEmployeeCount(busNo: Int) -> Int {
         var count = 0
+        let userId = UserDefaults.standard.string(forKey: Constant.loggedInUserIdString) ?? ""
         busAllocationList.forEach { item in
-            if item.employeeId == Constant.loggedInUserId {
+            if item.employeeId == userId {
                 DispatchQueue.main.async {
                     self.myALlocatedbus = item.allocatedBusNo
                 }
@@ -43,5 +45,16 @@ class BusViewModel: ObservableObject {
             }
         }
         return count
+    }
+
+    
+    func getBusWiseEmployeeList(busNo: Int) -> [BusAllocationModel] {
+        var employeeList: [BusAllocationModel] = []
+        busAllocationList.forEach { item in
+            if item.allocatedBusNo == busNo {
+                employeeList.append(item)
+            }
+        }
+        return employeeList
     }
 }

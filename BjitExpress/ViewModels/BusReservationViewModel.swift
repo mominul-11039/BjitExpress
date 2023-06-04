@@ -10,9 +10,11 @@ import Combine
 import CloudKit
 
 class BusReservationViewModel: ObservableObject {
-    let  coreDataViewModel = CoreDataViewModel.shared
-    @Published var busAllocationList: [BusAllocationModel] = []
-    @Published var myALlocatedbus: Int = 0
+    static let shared = BusReservationViewModel()
+    let coreDataViewModel = CoreDataViewModel.shared
+    var busAllocationList: [BusAllocationModel] = []
+    var myALlocatedbus: Int = 0
+    var cRecord: CKRecord?
     
     var cancellables = Set<AnyCancellable>()
 
@@ -34,8 +36,9 @@ class BusReservationViewModel: ObservableObject {
 
     func getBusWiseEmployeeCount(busNo: Int) -> Int {
         var count = 0
+        let userId = UserDefaults.standard.string(forKey: Constant.loggedInUserIdString) ?? ""
         busAllocationList.forEach { item in
-            if item.employeeId == Constant.loggedInUserId {
+            if item.employeeId == userId {
                 DispatchQueue.main.async {
                     self.myALlocatedbus = item.allocatedBusNo
                 }
@@ -45,6 +48,17 @@ class BusReservationViewModel: ObservableObject {
             }
         }
         return count
+    }
+
+    func currentUserRecord() -> CKRecord? {
+        let userId = UserDefaults.standard.string(forKey: Constant.loggedInUserIdString) ?? ""
+        var record: CKRecord?
+        busAllocationList.forEach { busAllocation in
+            if busAllocation.employeeId == userId {
+                record = busAllocation.record
+            }
+        }
+        return record
     }
 
     func bookSeat(busNo: Int, arrivalTime: (hour: Int, minute: Int)) {
@@ -59,13 +73,23 @@ class BusReservationViewModel: ObservableObject {
         
         print(deptTime)
         if canReachBeforeBusDept(deptTime: deptTime, arrivalTime: arrivalTime) && getBusWiseEmployeeCount(busNo: busNo) <= 50 {
-            let record = CKRecord(recordType: Constant.busAllocationRecordType)
-            record["employee_id"] = "11399"
-            record["allocated_bus_no"] = busInfo.bus_no
-            record["reach_time"] = (arrivalTime.hour * 60) + arrivalTime.minute
-            record["date"] = Date()
-            let busAllocatedModel = BusAllocationModel(record: record)!
-            saveUserData(busAllocationModel: busAllocatedModel)
+            let userId = UserDefaults.standard.string(forKey: Constant.loggedInUserIdString) ?? ""
+            if currentUserRecord() == nil {
+                let record = CKRecord(recordType: Constant.busAllocationRecordType)
+                record["employee_id"] = userId
+                record["allocated_bus_no"] = busInfo.bus_no
+                record["reach_time"] = (arrivalTime.hour * 60) + arrivalTime.minute
+                record["date"] = Date()
+                cRecord = record
+                let busAllocatedModel = BusAllocationModel(record: record)!
+                saveUserData(busAllocationModel: busAllocatedModel)
+            } else {
+                let currentRecord = currentUserRecord()!
+                currentRecord["allocated_bus_no"] = busInfo.bus_no
+                currentRecord["reach_time"] = (arrivalTime.hour * 60) + arrivalTime.minute
+                let busAllocatedModel = BusAllocationModel(record: currentRecord)!
+                saveUserData(busAllocationModel: busAllocatedModel)
+            }
         } else {
             bookSeat(busNo: busNo + 1, arrivalTime: arrivalTime)
         }
@@ -111,10 +135,41 @@ class BusReservationViewModel: ObservableObject {
         CloudKitViewModel.add(item: busAllocationModel) { result in
             switch (result) {
             case .success(_):
+                if self.cRecord != nil {
+                    self.updateListWithCurrentUser(record: self.cRecord!)
+                }
+                self.getBusAllocationList()
                 break
             case .failure(_):
                 break
             }
         }
+    }
+
+    func userCheckedIn() {
+        let currentRecord = currentUserRecord()!
+        currentRecord["reach_time"] = 0
+        let busAllocatedModel = BusAllocationModel(record: currentRecord)!
+        saveUserData(busAllocationModel: busAllocatedModel)
+    }
+
+    func updateListWithCurrentUser(record: CKRecord) {
+        let userId = UserDefaults.standard.string(forKey: Constant.loggedInUserIdString) ?? ""
+        if self.busAllocationList.count == 0 {
+            busAllocationList.append(BusAllocationModel(record: record)!)
+        } else {
+            var currentUserAdded = false
+            for index in 0...busAllocationList.count {
+                let busA = busAllocationList[index]
+                if busA.employeeId == userId {
+                    currentUserAdded = true
+                    busAllocationList[index] = BusAllocationModel(record: record)!
+                }
+            }
+            if !currentUserAdded {
+                busAllocationList.append(BusAllocationModel(record: record)!)
+            }
+        }
+        cRecord = nil
     }
 }

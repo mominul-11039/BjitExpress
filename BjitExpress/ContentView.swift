@@ -14,12 +14,12 @@ struct ContentView: View {
     let coreDataVM: CoreDataViewModel = CoreDataViewModel.shared
 
     var body: some View {
-        MainView()
+        LoginScreen()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginScreen()
     }
 }

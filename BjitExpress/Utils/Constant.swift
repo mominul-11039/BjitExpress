@@ -13,7 +13,9 @@ public class Constant {
     public static let coreDataContainerName = "BjitExpress"
     public static var loggedInUserId: String = "11039"
     public static var APIKEY: String = "Enter_your_key"
+    public static var loggedInUserIdString: String = "LoogedInUserID"
     public static let busAllocationRecordType = "Bus_Allocation"
+    public static let currentDate = "\(Calendar.current.component(.day, from: Date()))"
     public static var userLocation: CLLocationCoordinate2D?
     public static let busList: [Int] = [1, 2, 3, 4, 5]
     func getCurrentDate()-> String {
