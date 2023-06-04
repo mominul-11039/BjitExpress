@@ -11,18 +11,12 @@ import CoreLocation
 struct NetworkManager {
     let busReservationViewModel = BusReservationViewModel()
     
-    init() {
-        //        self.calculateDuration()
-    }
-    
     func calculateDuration() {
         let origin = "\(Constant.userLocation!.latitude),\(String(describing: Constant.userLocation!.latitude))"
         print(origin)
         let destination = "23.797530,90.423378"
-        
-        let apiKey = "AIzaSyCNBoNrWX5TuGtk64gPDdDbskKfbHgvpkM"
-        
-        guard let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&key=\(apiKey)") else {
+ 
+        guard let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&key=\(Constant.APIKEY)") else {
             return
         }
         
